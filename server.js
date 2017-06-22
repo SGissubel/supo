@@ -70,19 +70,19 @@ var authRoute = require('./routes/auth.js')(app, passport);
 // connection.end();
 var PORT = process.env.PORT || 3000;
 
-if (process.env.NODE_ENV !== 'testing') {
-  require('./models').connect(process.env.JAWSDB_URL)
-  .then(() => {
-    console.log('connected to the database ...')
-    app.listen(PORT, () => {
-      console.log(`Listening on port: ${PORT}`)
-    })
-  })
-  .catch((err) => {
-    console.log('DB connection error')
-    console.log(err)
-  })
-}
+// if (process.env.NODE_ENV !== 'testing') {
+//   require('./models').connect(process.env.JAWSDB_URL)
+//   .then(() => {
+//     console.log('connected to the database ...')
+//     app.listen(PORT, () => {
+//       console.log(`Listening on port: ${PORT}`)
+//     })
+//   })
+//   .catch((err) => {
+//     console.log('DB connection error')
+//     console.log(err)
+//   })
+// }
 
 
 

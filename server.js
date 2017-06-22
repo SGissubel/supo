@@ -69,19 +69,19 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 // connection.end();
 
-// if (process.env.NODE_ENV !== 'testing') {
-//   require('./models').connect(process.env.JAWSDB_URL)
-//   .then(() => {
-//     console.log('connected to the database ...')
-//     app.listen(PORT, () => {
-//       console.log(`Listening on port: ${PORT}`)
-//     })
-//   })
-//   .catch((err) => {
-//     console.log('DB connection error')
-//     console.log(err)
-//   })
-// }
+if (process.env.NODE_ENV !== 'testing') {
+  require('./models').connect(process.env.JAWSDB_URL)
+  .then(() => {
+    console.log('connected to the database ...')
+    app.listen(PORT, () => {
+      console.log(`Listening on port: ${PORT}`)
+    })
+  })
+  .catch((err) => {
+    console.log('DB connection error')
+    console.log(err)
+  })
+}
 
 
 
@@ -95,6 +95,7 @@ Models.sequelize.sync({ force: false }).then(function() {
     console.log(`Listening on PORT: ${PORT}`);
     })
   });
+
 //Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync().then(function() {
 //   app.listen(PORT, function(err) {

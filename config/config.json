@@ -1,6 +1,7 @@
 {
 
     "development": {
+        "port": 3306,
 
         "username": "root",
 
@@ -8,7 +9,7 @@
 
         "database": "saveup_development_db",
 
-        "host": "127.0.0.1",
+        "host": "localhost",
 
         "dialect": "mysql"
 

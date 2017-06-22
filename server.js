@@ -91,8 +91,9 @@ var authRoute = require('./routes/auth.js')(app, passport);
 var PORT = process.env.PORT || 3000;
 
 Models.sequelize.sync({ force: false }).then(function() {
-  server.listen(PORT, function() {
+  app.listen(PORT, function() {
     console.log(`Listening on PORT: ${PORT}`);
+    })
   });
 //Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync().then(function() {
@@ -107,3 +108,6 @@ Models.sequelize.sync({ force: false }).then(function() {
 
 //--Not sure if needed 6/16 - Jeff
 module.exports = app;
+
+
+

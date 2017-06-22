@@ -4,7 +4,7 @@
 
         "username": "root",
 
-        "password": "",
+        "password": "root",
 
         "database": "saveup_development_db",
 
@@ -28,19 +28,7 @@
 
     },
 
-    // "production": {
-
-    //     "username": "root",
-
-    //     "password": null,
-
-    //     "database": "saveup_db",
-
-    //     "host": "127.0.0.1",
-
-    //     "dialect": "mysql"
-
-    // },
+  
     "production": {
       "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"

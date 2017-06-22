@@ -68,6 +68,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 // });
 
 // connection.end();
+var PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV !== 'testing') {
   require('./models').connect(process.env.JAWSDB_URL)
@@ -88,13 +89,17 @@ if (process.env.NODE_ENV !== 'testing') {
 
 
 //Port config ---------------------------------------------------/
-var PORT = process.env.PORT || 3000;
 
-Models.sequelize.sync({ force: false }).then(function() {
-  app.listen(PORT, function() {
-    console.log(`Listening on PORT: ${PORT}`);
-    })
+// Models.sequelize.sync({ force: false }).then(function() {
+//   app.listen(PORT, function() {
+//     console.log(`Listening on PORT: ${PORT}`);
+//     })
+//   });
+models.sequelize.sync().then(function () {
+  var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + app.get('port'));
   });
+});
 
 //Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync().then(function() {

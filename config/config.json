@@ -28,19 +28,19 @@
 
     },
 
-    "production": {
+    // "production": {
 
-        "username": "root",
+    //     "username": "root",
 
-        "password": null,
+    //     "password": null,
 
-        "database": "saveup_db",
+    //     "database": "saveup_db",
 
-        "host": "127.0.0.1",
+    //     "host": "127.0.0.1",
 
-        "dialect": "mysql"
+    //     "dialect": "mysql"
 
-    },
+    // },
     "production": {
       "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"

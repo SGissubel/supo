@@ -2,7 +2,7 @@
 
 var express = require('express');
 var app = express();
-
+var Models = require('./models');
 // In the first two lines, we import the passport module and the express-session, both of which we need to handle authentication.
 // Then, we import the body-parser module. This extracts the entire body part of an incoming request and exposes it in a format that is easier to work with. In this case, we will use the JSON format.
 var passport = require('./config/passport/passport');
@@ -69,19 +69,19 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 // connection.end();
 
-if (process.env.NODE_ENV !== 'testing') {
-  require('./models').connect(process.env.JAWSDB_URL)
-  .then(() => {
-    console.log('connected to the database ...')
-    app.listen(PORT, () => {
-      console.log(`Listening on port: ${PORT}`)
-    })
-  })
-  .catch((err) => {
-    console.log('DB connection error')
-    console.log(err)
-  })
-}
+// if (process.env.NODE_ENV !== 'testing') {
+//   require('./models').connect(process.env.JAWSDB_URL)
+//   .then(() => {
+//     console.log('connected to the database ...')
+//     app.listen(PORT, () => {
+//       console.log(`Listening on port: ${PORT}`)
+//     })
+//   })
+//   .catch((err) => {
+//     console.log('DB connection error')
+//     console.log(err)
+//   })
+// }
 
 
 
@@ -90,16 +90,20 @@ if (process.env.NODE_ENV !== 'testing') {
 //Port config ---------------------------------------------------/
 var PORT = process.env.PORT || 3000;
 
-//Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function(err) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.info("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-    }
+Models.sequelize.sync({ force: false }).then(function() {
+  server.listen(PORT, function() {
+    console.log(`Listening on PORT: ${PORT}`);
   });
-});
+//Starting the server, syncing our models ------------------------------------/
+// db.sequelize.sync().then(function() {
+//   app.listen(PORT, function(err) {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       console.info("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+//     }
+//   });
+// });
 
 //--Not sure if needed 6/16 - Jeff
 module.exports = app;

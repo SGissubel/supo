@@ -54,6 +54,39 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 
 
+
+
+// var mysql = require('mysql');
+// var connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+// connection.connect();
+
+// connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+//   if (err) throw err;
+
+//   console.log('The solution is: ', rows[0].solution);
+// });
+
+// connection.end();
+
+if (process.env.NODE_ENV !== 'testing') {
+  require('./models').connect(process.env.JAWSDB_URL)
+  .then(() => {
+    console.log('connected to the database ...')
+    app.listen(PORT, () => {
+      console.log(`Listening on port: ${PORT}`)
+    })
+  })
+  .catch((err) => {
+    console.log('DB connection error')
+    console.log(err)
+  })
+}
+
+
+
+
+
 //Port config ---------------------------------------------------/
 var PORT = process.env.PORT || 3000;
 

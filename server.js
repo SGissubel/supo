@@ -95,22 +95,18 @@ if (process.env.NODE_ENV !== 'testing') {
 //     console.log(`Listening on PORT: ${PORT}`);
 //     })
 //   });
-models.sequelize.sync().then(function () {
-  var server = app.listen(app.get('port'), function() {
-    debug('Express server listening on port ' + app.get('port'));
-  });
-});
+
 
 //Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync().then(function() {
-//   app.listen(PORT, function(err) {
-//     if (err) {
-//       console.error(err);
-//     } else {
-//       console.info("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-//     }
-//   });
-// });
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function(err) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.info("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    }
+  });
+});
 
 //--Not sure if needed 6/16 - Jeff
 module.exports = app;

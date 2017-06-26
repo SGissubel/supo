@@ -402,8 +402,8 @@ input:-webkit-autofill {
     color: #20c254;
 }
 .dashboard-Wrapper{
-    margin-top: 6em;
-    margin-bottom: 6em;
+    margin-top: 7em;
+    margin-bottom: 16em;
 }
 #dashHeadH1 span{
     color: #33526e;
@@ -665,6 +665,7 @@ label{
     color: white;
     background-color: rgb(51,82,110);
     left: 0;
+    right: 0;
     bottom: 0;
     min-height: 20em;
     width: 100%;
@@ -721,8 +722,18 @@ label{
 
 
 
-@media screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) and (min-width: 450px)  {
     .supMethList ul{
         padding-top: 3em;
     }
+    .signin-Wrapper{
+        padding-bottom: 34em;
+    }
 }
+@media only screen and (max-width: 449px) {
+    .signin-Wrapper{
+        padding-bottom: 0 !important;
+        height: 120em !important;
+    }
+}
+

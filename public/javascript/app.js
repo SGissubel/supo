@@ -2,7 +2,7 @@ $(document).ready(function(){
     var scroll_start = 0;
     var jumbotron = $('.jumbotron');
     var offset = jumbotron.offset();
-    var budgetHead = $(".budgetHead");
+    var budgetHead = $(".youAreLoggedAs");
     var budgetOffset = budgetHead.offset();
     var yourRezults = $(".yourRezults");
     var yourRezultsOffSet = yourRezults.offset();

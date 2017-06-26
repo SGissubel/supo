@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     var personalBudgetPercent = ((personalBudget * 100) / totalPay).toFixed(2);
 
-    var totalPersonalBudget = $("<h2>Your total personal budget is: " + personalBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your personal budget is " + personalBudgetPercent + "% of your total budget.</h2>");
+    var totalPersonalBudget = $("<h2 class='budgetNumPercGrade'>Your total personal budget is: <span>$" + personalBudget + "</span></h2>");
+    var percentOfBudget = $("<h2 class='budgetNumPercGrade'>Your personal budget is <span>" + personalBudgetPercent + "%</span> of your total budget.</h2>");
 
     var suggestedBudgetPercent = 7;
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     var grade = getGrade(percentDiff);
     console.log(grade);
-    var personalGrade = $("<h5>Your grade is: " + grade + "</h5>");
+    var personalGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
     localStorage.setItem("personalGrade", grade);
 
     let personalAdvice;

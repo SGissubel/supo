@@ -1,82 +1,106 @@
 {{> nav/navbar}}
 
-	<div class="grader-Wrapper text-center">
-		<div class="container text-center">
-			<div class="yourRezults">
+	<div class="grader-Wrapper">
+		<div class="container">
+		<div class="resultsContainer">
+			<div class="yourRezults text-center">
 				<h1>Your Results</h1>
-			</div>
 
 				<h2>Budget Name: {{budgetResults.name}}</h2>
 				<h2>Budget Month: {{budgetResults.month}}</h2>
 				
 				<h2>Total Take Home Pay: ${{budgetResults.totalPay}}.00</h2>
+			</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Food</strong></h3>
-					<h4>Grade: ${{budgetResults.foodTotal}}.00</h4>
-					<h4>Total Expenses: {{budgetResults.foodGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Food</strong></h2>
+					<div class=resultBody>
+						<h4>Grade: ${{budgetResults.foodTotal}}.00</h4>
+						<h4>Total Expenses: {{budgetResults.foodGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Clothing</strong></h3>
-					<h4>Clothing Totals: ${{budgetResults.clothingTotal}}.00</h4>
-					<h4>Clothing Grade: {{budgetResults.clothingGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Clothing</strong></h2>
+					<div class=resultBody>
+						<h4>Clothing Totals: ${{budgetResults.clothingTotal}}.00</h4>
+						<h4>Clothing Grade: {{budgetResults.clothingGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Utilities</strong></h3>
-					<h4>Utilities Total: ${{budgetResults.utilitiesTotal}}.00</h4>
-					<h4>Utilities Grade: {{budgetResults.utilitiesGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Utilities</strong></h2>
+					<div class=resultBody>
+						<h4>Utilities Total: ${{budgetResults.utilitiesTotal}}.00</h4>
+						<h4>Utilities Grade: {{budgetResults.utilitiesGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Housing</strong></h3>
-					<h4>Housing Total: ${{budgetResults.housingTotal}}.00</h4>
-					<h4>Housing Grade: {{budgetResults.housingGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Housing</strong></h2>
+					<div class=resultBody>
+						<h4>Housing Total: ${{budgetResults.housingTotal}}.00</h4>
+						<h4>Housing Grade: {{budgetResults.housingGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Savings</strong></h3>
-					<h4>Savings Total: ${{budgetResults.savingsTotal}}.00</h4>
-					<h4>Savings Grade: {{budgetResults.savingsGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Savings</strong></h2>
+					<div class=resultBody>
+						<h4>Savings Total: ${{budgetResults.savingsTotal}}.00</h4>
+						<h4>Savings Grade: {{budgetResults.savingsGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Medical</strong></h3>
-					<h4>Medical Total: ${{budgetResults.medicalTotal}}.00</h4>
-					<h4>Medical Grade: {{budgetResults.medicalGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Medical</strong></h2>
+					<div class=resultBody>
+						<h4>Medical Total: ${{budgetResults.medicalTotal}}.00</h4>
+						<h4>Medical Grade: {{budgetResults.medicalGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Insurance</strong></h3>
-					<h4>Insurance Total: ${{budgetResults.insuranceTotal}}.00</h4>
-					<h4>Insurance Grade: {{budgetResults.insuranceGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Insurance</strong></h2>
+					<div class=resultBody>
+						<h4>Insurance Total: ${{budgetResults.insuranceTotal}}.00</h4>
+						<h4>Insurance Grade: {{budgetResults.insuranceGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Transportation</strong></h3>
-					<h4>Transportation Total: ${{budgetResults.transportationTotal}}.00</h4>
-					<h4>Transportation Grade: {{budgetResults.transportationGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Transportation</strong></h2>
+					<div class=resultBody>
+						<h4>Transportation Total: ${{budgetResults.transportationTotal}}.00</h4>
+						<h4>Transportation Grade: {{budgetResults.transportationGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Personal</strong></h3>
-					<h4>Personal Total: ${{budgetResults.personalTotal}}.00</h4>
-					<h4>Personal Grade: {{budgetResults.personalGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Personal</strong></h2>
+					<div class=resultBody>
+						<h4>Personal Total: ${{budgetResults.personalTotal}}.00</h4>
+						<h4>Personal Grade: {{budgetResults.personalGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Entertainment</strong></h3>
-					<h4>Entertainment Total: ${{budgetResults.entertainmentTotal}}.00</h4>
-					<h4>Entertainment Grade: {{budgetResults.entertainmentGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Entertainment</strong></h2>
+					<div class=resultBody>
+						<h4>Entertainment Total: ${{budgetResults.entertainmentTotal}}.00</h4>
+						<h4>Entertainment Grade: {{budgetResults.entertainmentGrade}}</h4>
+					</div>
 				</div>
 				<br />
-				<div className="bg-success text-white">
-					<h3 className="text-xl"><strong>Debt</strong></h3>
-					<h4>Debt Total: ${{budgetResults.debtTotal}}.00</h4>
-					<h4>Debt Grade: {{budgetResults.debtGrade}}</h4>
+				<div class="text-white">
+					<h2 class="text-xl text-center result-title"><strong>Debt</strong></h2>
+					<div class=resultBody>
+						<h4>Debt Total: ${{budgetResults.debtTotal}}.00</h4>
+						<h4>Debt Grade: {{budgetResults.debtGrade}}</h4>
+					</div>
 				</div>
 				<br />
+			</div>
 		</div>
 	</div>
 	

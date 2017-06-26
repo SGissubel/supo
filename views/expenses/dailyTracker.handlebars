@@ -1,8 +1,20 @@
 {{> nav/navbar}}
 
 <div id="expense-wrapper">
-  <h1 class="budgetHead">Daily Expense Tracker </h1>
+  {{> loggedInAs/logginAs}}
+    <div class="row">
+      <h1 class="budgetHead text-center">Daily Expense Tracker </h1>
+    </div>  
   <div class="container">
+
+  
+
+    <div class="form-group form-groupCatergory currentBudgetSelect">
+    <h2>Choose A Budget You Would Like To Work With This Month?</h2>
+    <label for="category">Choose a Budget to Compare Your Current Expenses - And See How Good You've Been This Month</label>
+    <div id="currentBudgetName">
+      
+    </div>
 <!--   <h1> Expenses </h1>
  -->    <div><h2>Your Daily Budget for <b><span id="monthToday"></span></b></h2> </div>
        
@@ -25,22 +37,17 @@
         <option value="entertainment">Entertainment</option>
       </select>
     </div>
-  	<div class="form-group">
-  	  <label for="expense">Expense Name:</label>
-  	  <input type="text" class="form-control" id="expenseName">
-  	</div>
+    <div class="form-group">
+      <label for="expense">Expense Name:</label>
+      <input type="text" class="form-control" id="expenseName">
+    </div>
     <div class="form-group">
       <label for="expenseAmount">Amount Spent</label>
       <input type="number" class="form-control" id="expenseAmount">
     </div>
     <button id="expenseSubmit" type="button" class="btn btn-default bgtBtn">Submit</button>
   </div>
-  <div class="form-group form-groupCatergory currentBudgetSelect">
-    <h2>Want to Compare Your Current Expenses to One of Your Budgets?</h2>
-    <label for="category">Choose a Budget to Compare Your Current Expenses - And See How Good You've Been This Month</label>
-    <div id="currentBudgetName">
-      
-    </div>
+  
   </div>
 </div>
 

@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     var insuranceBudgetPercent = ((insuranceBudget * 100) / totalPay).toFixed(2);
 
-    var totalInsuranceBudget = $("<h2>Your total insurance budget is: " + insuranceBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your insurance budget is " + insuranceBudgetPercent + "% of your total budget.</h2>");
+    var totalInsuranceBudget = $("<h3 class='budgetNumPercGrade'>Your total insurance budget is: <span>$" + insuranceBudget + "</span></h3>");
+    var percentOfBudget = $("<h3 class='budgetNumPercGrade'>Your insurance budget is <span>" + insuranceBudgetPercent + "%</span> of your total budget.</h3>");
 
     var suggestedBudgetPercent = 25;
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     var grade = getGrade(percentDiff);
     console.log(grade);
-    var insuranceGrade = $("<h5>Your grade is: " + grade + "</h5>");
+    var insuranceGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
     localStorage.setItem("insuranceGrade", grade);
 
     let insuranceAdvice;

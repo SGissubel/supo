@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     var transportationBudgetPercent = ((transportationBudget * 100) / totalPay).toFixed(2);
 
-    var totalTransportationBudget = $("<h2>Your total transportation budget is: " + transportationBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your transportation budget is " + transportationBudgetPercent + "% of your total budget.</h2>");
+    var totalTransportationBudget = $("<h3 class='budgetNumPercGrade'>Your total transportation budget is: <span>$" + transportationBudget + "</span></h3>");
+    var percentOfBudget = $("<h3 class='budgetNumPercGrade'>Your transportation budget is <span>" + transportationBudgetPercent + "%</span> of your total budget.</h3>");
 
     var suggestedBudgetPercent = 15;
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
     var grade = getGrade(percentDiff);
     console.log(grade);
-    var transportationGrade = $("<h5>Your grade is: " + grade + "</h5>");
+    var transportationGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
     localStorage.setItem("transportationGrade", grade);
 
     let transportationAdvice;

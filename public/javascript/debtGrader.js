@@ -13,8 +13,8 @@ $(document).ready(function() {
 
     var debtBudgetPercent = ((debtBudget * 100) / totalPay).toFixed(2);
 
-    var totalDebtBudget = $("<h2>Your total debt budget is: " + debtBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your debt budget is " + debtBudgetPercent + "% of your total budget.</h2>");
+    var totalDebtBudget = $("<h3 class='budgetNumPercGrade'>Your total debt budget is: <span>$" + debtBudget + ".00</span></h3>");
+    var percentOfBudget = $("<h3 class='budgetNumPercGrade'>Your debt budget is <span>" + debtBudgetPercent + "%</span> of your total budget.</h3>");
 
     var suggestedBudgetPercent = 0;
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     var grade = getGrade(percentDiff);
     console.log(grade);
-    var debtGrade = $("<h5>Your grade is: " + grade + "</h5>");
+    var debtGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
 
     localStorage.setItem("debtGrade", grade);
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 
     var budgetTotals = {
-        totalPay: pullForTotals.budgetForm.takehome,
+        totalPay: pullForTotals.budgetForm.totalPay,
         foodTotal: pullForTotals.budgetForm2.foodTotal,
         clothingTotal: pullForTotals.budgetForm3.clothingTotal,
         utilitiesTotal: pullForTotals.budgetForm4.utilitiesTotal,
@@ -91,9 +91,17 @@ $(document).ready(function() {
 
 
     var totalsForDisplay = (parseInt(budgetTotals.totalPay) - (parseInt(budgetTotals.foodTotal) + parseInt(budgetTotals.clothingTotal) + parseInt(budgetTotals.utilitiesTotal) + parseInt(budgetTotals.housingTotal) + parseInt(budgetTotals.savingsTotal) + parseInt(budgetTotals.medicalTotal) + parseInt(budgetTotals.insuranceTotal) + parseInt(budgetTotals.transportationTotal) + parseInt(budgetTotals.personalTotal) + parseInt(budgetTotals.entertainmentTotal) + parseInt(budgetTotals.debtTotal)));
+
     localStorage.setItem("totalsForDisplay", totalsForDisplay);
-    var totalPay = $("<h2>Your Total Pay is: $" + budgetTotals.totalPay + ".00</h2>");
-    var displayBudgetTotals = $("<h2>We added all your budgets and you have: $" + totalsForDisplay + ".00 left over.</h2><h3>You should go back and put this into your debt or maybe even your saving!</h2>")
+
+    var totalPay = $("<h2 class='budgetNumPercGrade'>Your Total Pay is: <span>$" + budgetTotals.totalPay + ".00</span></h2>");
+
+    if (totalsForDisplay > 0) { 
+    var displayBudgetTotals = $("<h2 class='budgetNumPercGrade'>We added all your budgets and you have: <span>$" + totalsForDisplay + ".00</span> left over.</h2><h3 class='text-center goBack'><i>You should go back and put this into your debt or maybe even your saving!</i></h2>");
+    }else {
+     var displayBudgetTotals = $("<h2 class='budgetNumPercGrade'>We added all your budgets and you are: <span>$" + totalsForDisplay + ".00</span> over.</h2><h3 class='text-center goBack'><i>Please Go Back and Adjust your budget!</i></h2>");   
+    }
+
     $("#totalPay").append(totalPay);
     $("#budgetLeft").append(displayBudgetTotals);
     $("#budgetGrade").append(debtGrade);
@@ -113,20 +121,6 @@ $("#debtGraderBack").on("click", function() {
 
 $("#debtGraderNext").on("click", function() {
 
-    //     var pullForGrades = {
-    //     foodGrade: JSON.parse(localStorage.getItem("foodGrade")),
-    //     clothingGrade: JSON.parse(localStorage.getItem("clothingGrade")),
-    //     housingGrade: JSON.parse(localStorage.getItem("housingGrade")),
-    //     medicalGrade: JSON.parse(localStorage.getItem("medicalGrade")),
-    //     insuranceGrade: JSON.parse(localStorage.getItem("insuranceGrade")),
-    //     personalGrade: JSON.parse(localStorage.getItem("personalGrade")),
-    //     savingsGrade: JSON.parse(localStorage.getItem("savingsGrade")),
-    //     utilitesGrade: JSON.parse(localStorage.getItem("utilitesGrade")),
-    //     transportationGrade: JSON.parse(localStorage.getItem("transportationGrade")),
-    //     entertainmentGrade: JSON.parse(localStorage.getItem("entertainmentGrade")),
-    //     debtGrade: JSON.parse(localStorage.getItem("debtGrade")),
-
-    // };
 
     var dataToPost = {
         totalsForDisplay: localStorage.getItem("totalsForDisplay"),

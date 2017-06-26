@@ -18,8 +18,8 @@ $(document).ready(function() {
 
     var foodBudgetPercent = ((foodBudget * 100) / totalPay).toFixed(2);
 
-    var totalFoodBudget = $("<h2>Your total food budget is: " + foodBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your food budget is " + foodBudgetPercent + "% of your total budget.</h2>");
+    var totalFoodBudget = $("<h3 class='budgetNumPercGrade'>Your total food budget is: <span>$" + foodBudget + "</span></h3>");
+    var percentOfBudget = $("<h3 class='budgetNumPercGrade'>Your food budget is <span>" + foodBudgetPercent + "</span>% of your total budget.</h3>");
 
     var suggestedBudgetPercent = 15;
     var percentDiff = foodBudgetPercent - suggestedBudgetPercent;
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     var grade = getGrade(percentDiff);
     console.log(grade);
-    var foodGrade = $("<h4>Your grade is: " + grade + "</h4>");
+    var foodGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
 
 
     // localStorage.setItem("foodGrade", grade);

@@ -1,151 +1,169 @@
 <div class="container" id="expense-wrapper-Container"> 
+
+{{!-- 
+
   <div class="row text-center">
-    <button type="button" class="btn btn-danger">Budget Amount Set [Total Starting Budget]</button>
-    <button type="button" class="btn btn-success">Budget Amount Left [Amount Left]</button>
-  </div> {{!-- closes row  --}} 
-    <h3>Panels below will change color if budget spent is over, below or close to set Budget for month</h3>
+    <button type="button" class="btn btn-danger">Budget Amount Set $:<span id="totalStartingBudget"></span>.00</button>
+    <button type="button" class="btn btn-success">Budget Amount Left $<span id="totalBudgetLeft"></span>.00</button>
+  </div>  --}}
+
+
+    <h3 class="text-center">Panels below will change color to measure how you are performing on your current Budget. They will turn red if you are over, Yellow if you are close and Green if you are still within the budget amount you set</h3>
+
+    </br>
+    
  <div class="panel-group" id="accordion">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="foodPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-          Food Budget Left for the month : <span id="foodBudgetRemainder"></span></a>
+          Food Budget Left for the month : $<span id="foodBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <ul class="list-group" id="foodCategory">
         </ul>
-        <div class="panel-footer">Food Budget: <span id="foodBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Food Budget: $<span id="foodBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="clothingPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-          Clothing Budget Left for the Month : <span id="clothingBudgetRemainder"></span></a>
+          Clothing Budget Left for the Month : $<span id="clothingBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <ul class="list-group" id="clothingCategory">
         </ul>
-        <div class="panel-footer">Clothing Budget: <span id="clothingBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Clothing Budget: $<span id="clothingBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="utilitiesPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-          Utilities Budget Left for the Month : <span id="utilitiesBudgetRemainder"></span></a>
+          Utilities Budget Left for the Month : $<span id="utilitiesBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <ul class="list-group" id="utiltiesCategory">
         </ul>
-        <div class="panel-footer">Utilities Budget: <span id="utilitiesBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Utilities Budget: $<span id="utilitiesBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="housingPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-          Housing Budget Left for the Month : <span id="housingBudgetRemainder"></span></a>
+          Housing Budget Left for the Month : $<span id="housingBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <ul class="list-group" id="housingCategory">
         </ul>
-        <div class="panel-footer">Housing Budget: <span id="housingBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Housing Budget: $<span id="housingBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="savingsPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-          Savings Budget Left for the Month : <span id="savingsBudgetRemainder"></span></a>
+          Savings Budget Left for the Month : $<span id="savingsBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <ul class="list-group" id="savingsCategory">
         </ul>
-        <div class="panel-footer">Savings Budget: <span id="savingsBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Savings Budget: $<span id="savingsBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="medicalPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-          Medical Budget Left for the Month : <span id="medicalBudgetRemainder"></span></a>
+          Medical Budget Left for the Month : $<span id="medicalBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse6" class="panel-collapse collapse">
         <ul class="list-group" id="medicalCategory">
         </ul>
-        <div class="panel-footer">Medical Budget: <span id="medicalBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Medical Budget: $<span id="medicalBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="insurancePanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-          Insurance Budget Left for the Month : <span id="insuranceBudgetRemainder"></span></a>
+          Insurance Budget Left for the Month : $<span id="insuranceBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse7" class="panel-collapse collapse">
         <ul class="list-group" id="insuranceCategory">
         </ul>
-        <div class="panel-footer">Insurance Budget: <span id="insuranceBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Insurance Budget: $<span id="insuranceBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="transportationPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
-          Transportation Budget Left for the Month : <span id="transportationBudgetRemainder"></span></a>
+          Transportation Budget Left for the Month : $<span id="transportationBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse8" class="panel-collapse collapse">
         <ul class="list-group" id="transportationCategory">
         </ul>
-        <div class="panel-footer">Transportation Budget: <span id="transportationBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Transportation Budget: $<span id="transportationBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="personalPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
-          Personal Budget Left for the Month : <span id="personalBudgetRemainder"></span></a>
+          Personal Budget Left for the Month : $<span id="personalBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse9" class="panel-collapse collapse">
         <ul class="list-group" id="personalCategory">
         </ul>
-        <div class="panel-footer">Personal Budget: <span id="personalBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Personal Budget: $<span id="personalBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="entertainmentPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
-          Entertainment Budget Left for the Month : <span id="entertainmentBudgetRemainder"></span></a>
+          Entertainment Budget Left for the Month : $<span id="entertainmentBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse10" class="panel-collapse collapse">
         <ul class="list-group" id="entertainmentCategory">
         </ul>
-        <div class="panel-footer">Entertainment Budget: <span id="entertainmentBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Entertainment Budget: $<span id="entertainmentBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
+
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id="debtPanelHeading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
-          Debt Budget Left for the Month : <span id="debtBudgetRemainder"></span></a>
+          Debt Budget Left for the Month : $<span id="debtBudgetRemainder"></span>.00</a>
         </h4>
       </div>
       <div id="collapse11" class="panel-collapse collapse">
         <ul class="list-group" id="debtCategory">
         </ul>
-        <div class="panel-footer">Debt Budget: <span id="debtBudget">[Value pulled from Database]</span></div>
+        <div class="panel-footer">Debt Budget: $<span id="debtBudget"></span>.00</div>
       </div>
     </div> {{!-- closes panel --}}
   </div> {{!-- closes full group container --}}

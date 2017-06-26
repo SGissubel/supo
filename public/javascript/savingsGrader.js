@@ -16,14 +16,14 @@ $(document).ready(function() {
 
     var savingsBudgetPercent = ((savingsBudget * 100) / totalPay).toFixed(2);
 
-    var totalSavingsBudget = $("<h2>Your total savings budget is: " + savingsBudget + "</h2>");
-    var percentOfBudget = $("<h2>Your savings budget is " + savingsBudgetPercent + "% of your total budget.</h2>");
+    var totalSavingsBudget = $("<h3 class='budgetNumPercGrade'>Your total savings budget is: <span>$" + savingsBudget + "</span></h3>");
+    var percentOfBudget = $("<h3 class='budgetNumPercGrade'>Your savings budget is <span>" + savingsBudgetPercent + "%</span> of your total budget.</h3>");
 
     var suggestedBudgetPercent = 15;
 
     var grade = getGrade(savingsBudgetPercent, "savings");
     console.log(grade);
-    var savingsGrade = $("<h5>Your grade is: " + grade + "</h5>");
+    var savingsGrade = $("<h3 class='budgetNumPercGrade'>Your grade is: <span>" + grade + "</span></h3>");
     localStorage.setItem("savingsGrade", grade);
 
     let savingsAdvice;

@@ -391,9 +391,16 @@ input:-webkit-autofill {
 
 
 /*============================== dashboard page ==========================================*/
-.greeting{
-/*    margin-top: 6em;
-*/}
+.greeting {
+    color: #33526E;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 1em;
+}
+
+#youAreLoggedAs {
+    color: #20c254;
+}
 .dashboard-Wrapper{
     margin-top: 6em;
     margin-bottom: 6em;
@@ -430,6 +437,11 @@ input:-webkit-autofill {
     margin-bottom: 6em;
 }
 
+#foodPanelHeading, #clothingPanelHeading, #utilitiesPanelHeading, #housingPanelHeading, #savingsPanelHeading, #medicalPanelHeading, #insurancePanelHeading, #transportationPanelHeading, #personalPanelHeading, #entertainmentPanelHeading, #debtPanelHeading {
+    background-image: none;
+    background-color: #23AB4F;
+}
+
 
 /*======================================== GRADER ====================================*/
 
@@ -437,11 +449,120 @@ input:-webkit-autofill {
     margin-top: 6em;
     margin-bottom: 6em;
 }
+.graderContainer{
+    padding: 1em 3em;
+    padding-bottom: 8em;
+    margin: 0 10em;
+    background-color: whitesmoke;
+}
+.graderContainer h1{
+    color: #33526e;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.graderContainer h1:after {
+    text-align: center;
+    content:' ';
+    display:block;
+    width: 44%;
+    margin: .5em auto;
+    border:2px solid #33526e;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.debtGradeDiv h2{
+    color: #20c254;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+}
+.debtGradeDiv h2:after {
+    text-align: center;
+    content:' ';
+    display:block;
+    width: 55%;
+    margin: .5em auto;
+    border:2px solid #20c254;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.budgetNumPercGrade span{
+    border-bottom: 1px solid #20c254;
+    color: #20c254;
+}
+#adviceHead:after {
+    text-align: center;
+    content:' ';
+    display:block;
+    width: 75%;
+    margin: .5em auto;
+    border:2px solid #33526e;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+#aplus{
+    padding: 1em;
+
+}
+.goBack{
+    padding-top: 1em;
+    color: #33526e;
+}
+
+/*======================================== results page ====================================*/
 
 
+.resultsContainer{
+    background-color: #ececec;
+    padding: 1em 7em;
+}
+.resultsContainer h4{
+    padding-left: 10em;
+}
+.resultsContainer h4:first-child{
+    padding-bottom: 1em;
+}
+.resultBody{
+    background-color: 
+}
+.yourRezults{
+    padding: 1em;
 
-
-
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #33526e;
+    color: white;
+}
+.result-title{
+    color: #33526e;
+}
+.result-title:after {
+    text-align: center;
+    content:' ';
+    display:block;
+    width: 75%;
+    margin: .5em auto;
+    border:2px solid #33526e;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+}
 
 /*======================================== budget pages ====================================*/
 .payBtn{
@@ -463,7 +584,6 @@ input:-webkit-autofill {
     font-weight: 100;
     margin-bottom: -1em;
     margin-top: 0;
-    float: right;
     padding-right: 5em;
 }
 

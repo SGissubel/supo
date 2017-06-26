@@ -18,11 +18,7 @@
           <li class="tool-dropdown"><a class="navmenuDrop" href="/expenses">EXPENSE TRACKER</a></li>
           <li class="tool-dropdown" class="dropdown-submenu">
             <a class="test tool-dropdown navmenuDrop tool-dropdown" tabindex="-1" href="#">SUBMENU 3</a>
-            <ul class="dropdown-menu">
-              <li><a tabindex="-1" href="#">SUBMENU 1</a></li>
-              <li><a tabindex="-1" href="#">SUBMENU 2</a></li>
-              <li><a tabindex="-1" href="#">SUBMENU 3</a></li>  
-            </ul>
+
           </li>
         </ul>
       </li>       
@@ -31,6 +27,12 @@
 </nav>
 </div><!--end navbar-div-->
 <script>
+$('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
+
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){
     $(this).next('ul').toggle();
